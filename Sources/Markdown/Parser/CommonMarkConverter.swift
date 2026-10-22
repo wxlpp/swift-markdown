@@ -612,6 +612,9 @@ struct MarkupParser {
         cmark_gfm_core_extensions_ensure_registered()
 
         var cmarkOptions = CMARK_OPT_TABLE_SPANS
+        if options.contains(.cjkFriendlyEmphasis) {
+            cmarkOptions |= CMARK_OPT_CJK_FRIENDLY_EMPHASIS
+        }
         if !options.contains(.disableSmartOpts) {
             cmarkOptions |= CMARK_OPT_SMART
         }

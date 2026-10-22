@@ -16,6 +16,9 @@ public struct ParseOptions: OptionSet, Sendable {
         self.rawValue = rawValue
     }
 
+    /// Enable CJK-friendly emphasis without rewriting the source. Disabled by default.
+    public static let cjkFriendlyEmphasis = ParseOptions(rawValue: 1 << 5)
+
     /// Enable block directive syntax.
     public static let parseBlockDirectives = ParseOptions(rawValue: 1 << 0)
 
